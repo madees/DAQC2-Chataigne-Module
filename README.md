@@ -24,17 +24,17 @@ On Raspberry Pi, you'll need to run the Python script "OSCDAQC2Plate.py" for OSC
 
 This scripts needs those modules installed :
 https://pypi.org/project/osc4py3/
->>> sudo pip3 install osc4py3
+> sudo pip3 install osc4py3
 https://pi-plates.com/daqc2-users-guide/
->>> sudo pip3 install pi-plates
+> sudo pip3 install pi-plates
 
 ## Principle of use
 You should first start the OSC parser on Raspberry Pi by running the script:
->>> python3 OSCDAQC2Plate.py
+> python3 OSCDAQC2Plate.py
 
 By default, it will send OSC to local IP (ie. Chataigne shoud run on Raspberry Pi).
 You can also send OSC to another IP (if Chataigne runs on another distant device) by giving IP as command line argument, example :
->>> python3 OSCDAQC2Plate.py 192.168.1.69
+> python3 OSCDAQC2Plate.py 192.168.1.69
 
 The DAQC2 LED should turn from white to black, and to green if everything's fine.
 Now you can run Chataigne, and add a DAQC2 module.
