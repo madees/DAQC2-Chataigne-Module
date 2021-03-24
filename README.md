@@ -43,14 +43,14 @@ Now you can run Chataigne, and add a DAQC2 module.
 You may use Module Commands to change DAQC2 outputs, and Module Values to retrieve its inputs.
 
 ## Module interface
-#### - OSC Input port
+#### OSC Input port
 Preset according to Python script (5051). If not local, Python script should be run with Chataigne IP as argument
 
-#### - OSC Output port
+#### OSC Output port
 Preset according to Python qcript (50052).
 Default IP address setting is local, if you run Chataigne on the Raspberry PI. If not, should be set to the distant Raspberry Pi IP.
 
-### - Ping
+#### Ping
 Simple function to check communication with Python script. 
 Pressing the button will send a "/ping" command.
 "Is anybody out there" check if you receive a "/pong" from Raspberry Pi.
