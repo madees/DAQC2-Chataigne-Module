@@ -25,6 +25,7 @@ On Raspberry Pi, you'll need to run the Python script "OSCDAQC2Plate.py" for OSC
 This scripts needs those modules installed :
 https://pypi.org/project/osc4py3/
 > sudo pip3 install osc4py3
+
 https://pi-plates.com/daqc2-users-guide/
 > sudo pip3 install pi-plates
 
