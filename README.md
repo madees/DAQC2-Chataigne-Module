@@ -34,6 +34,7 @@ You should first start the OSC parser on Raspberry Pi by running the script:
 > python3 OSCDAQC2Plate.py
 
 By default, it will send OSC to local IP (ie. Chataigne shoud run on Raspberry Pi).
+
 You can also send OSC to another IP (if Chataigne runs on another distant device) by giving IP as command line argument, example :
 > python3 OSCDAQC2Plate.py 192.168.1.69
 
@@ -79,18 +80,22 @@ Send "/ping", should receive "/pong". This is time stamped in RPI CLI.
 
 #### GetDIN
 Send "/getDIN"
+
 Update DIN states manually.
 
 #### intEnable
 Send "/intEnable"
+
 Enable interrupts on digital inputs. States will be automatically updates when the inputs changes. This is time stamped in RPI CLI.
 
 #### intDisable
 Send "/intDisable"
+
 Disable interrupts on digital inputs. You'll need to manually pull changes by using GetDIN. This is time stamped in RPI CLI.
 
 #### DOut (channel, state)
 Send "/Dout/channel state"
+
 Set one output state. "channel" is the number of output as integer (0-7), "state" is a boolean (True=+5v, False=0v)
 
 #### Color LED (color)
