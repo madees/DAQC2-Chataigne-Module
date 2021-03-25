@@ -1,5 +1,8 @@
 # DAQC2-Chataigne-Module
-Chataigne module to control Pi-Plate DAQC2 hardware with OSC protocol.
+Chataigne module to interface Pi-Plates DAQC2 hardware with OSC protocol.
+
+Pi-Plates DAQC2 is an affordable high precision multifunctional Data Acquisition and Controller board for Raspberry Pi.
+It doesn't support OSC natively, so we made a Python script as bridge on Raspberry Pi side.
 
 This community module is NOT OFFICIALLY supported by Pi-Plates.
 It is publicly available to enable interested users to experiment, extend and create their own adaptations.
