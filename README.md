@@ -5,6 +5,7 @@ Pi-Plates DAQC2 is an affordable high precision multifunctional Data Acquisition
 It doesn't support OSC natively, so we made a Python script as bridge on Raspberry Pi side.
 
 This community module is NOT OFFICIALLY supported by Pi-Plates.
+
 It is publicly available to enable interested users to experiment, extend and create their own adaptations.
 There is no guarantee for compatibility inbetween versions or for the implemented functionality to be reliable for professional.
 Use what is provided here at your own risk!
@@ -52,12 +53,15 @@ You may use Module Commands to change DAQC2 outputs, and Module Values to retrie
 Preset according to Python script (5051). If not local, Python script should be run with Chataigne IP as argument
 
 #### OSC Output port
-Preset according to Python qcript (50052).
+Preset according to Python script (50052).
+
 Default IP address setting is local, if you run Chataigne on the Raspberry PI. If not, should be set to the distant Raspberry Pi IP.
 
 #### Ping
-Simple function to check communication with Python script. 
+Simple function to check communication with Python script.
+
 Pressing the button will send a "/ping" command.
+
 "Is anybody out there" check if you receive a "/pong" from Raspberry Pi.
 
 #### CAN Analog inputs
@@ -66,7 +70,9 @@ Pressing the button will send a "/ping" command.
 - 16 bit resolution
 
 Receives "/CAN/channel value" as float
+
 Values are automatically received when they change on analog inputs.
+
 Sampling rate from DAQC2 is about 1000 samples/second, but filtered to max 50 values changes/second in Python script to lower OSC traffic.
 
 #### DIN Digital inputs
@@ -101,6 +107,7 @@ Disable interrupts on digital inputs. You'll need to manually pull changes by us
 Send "/Dout/channel state"
 
 Set one output state. "channel" is the number of output as integer (0-7), "state" is a boolean (True=+5v, False=0v)
+
 - 8 Outputs
 - Green LEDs on each output
 - open collector 3A sink current for each channel
