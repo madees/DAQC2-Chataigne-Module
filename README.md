@@ -39,6 +39,7 @@ You can also send OSC to another IP (if Chataigne runs on another distant device
 > python3 OSCDAQC2Plate.py 192.168.1.69
 
 The DAQC2 LED should turn from white to black, and to green if everything's fine.
+
 Now you can run Chataigne, and add a DAQC2 module.
 
 You may use Module Commands to change DAQC2 outputs, and Module Values to retrieve its inputs.
