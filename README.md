@@ -98,6 +98,11 @@ Disable interrupts on digital inputs. You'll need to manually pull changes by us
 Send "/Dout/channel state"
 
 Set one output state. "channel" is the number of output as integer (0-7), "state" is a boolean (True=+5v, False=0v)
+- 8 Outputs
+- Green LEDs on each output
+- open collector 3A sink current for each channel
+- Built in flyback current protection
+- Maximum load voltage of 30VDC
 
 #### Color LED (color)
 Change the RGB DAQC2 LED color. "color" is a string ("off", "red", "green", "yellow", "blue", "magenta", "cyan", "white")
