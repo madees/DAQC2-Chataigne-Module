@@ -60,6 +60,7 @@ Pressing the button will send a "/ping" command.
 - -12 to +12V input range
 - 16 bit resolution
 
+Receives "/CAN/channel value" as float
 Values are automatically received when they change on analog inputs.
 Sampling rate from DAQC2 is about 1000 samples/second, but filtered to max 50 values changes/second in Python script to lower OSC traffic.
 
@@ -68,6 +69,8 @@ Sampling rate from DAQC2 is about 1000 samples/second, but filtered to max 50 va
 - 3.3 and 5.0 logic compatible
 - Can be polled or programmed to generate an interrupt on change
 
+Receives "/DIN/channel state" as boolean
+
 ## Commands
 Commands are ready to use in your scripts, with the "Command tester" tool, or as outputs from the State machine and Sequences in Time Machine.
 
@@ -75,15 +78,19 @@ Commands are ready to use in your scripts, with the "Command tester" tool, or as
 Send "/ping", should receive "/pong". This is time stamped in RPI CLI.
 
 #### GetDIN
+Send "/getDIN"
 Update DIN states manually.
 
 #### intEnable
+Send "/intEnable"
 Enable interrupts on digital inputs. States will be automatically updates when the inputs changes. This is time stamped in RPI CLI.
 
 #### intDisable
+Send "/intDisable"
 Disable interrupts on digital inputs. You'll need to manually pull changes by using GetDIN. This is time stamped in RPI CLI.
 
 #### DOut (channel, state)
+Send "/Dout/channel state"
 Set one output state. "channel" is the number of output as integer (0-7), "state" is a boolean (True=+5v, False=0v)
 
 #### Color LED (color)
