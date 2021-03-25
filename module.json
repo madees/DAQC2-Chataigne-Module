@@ -1,0 +1,217 @@
+{
+	"name": "DAQC2 Pi-Plates",
+	"type": "OSC",
+	"path": "Hardware",
+	
+	"version": "1.3.1",
+	"description": "Module to control the DAQC2 Pi-Plates by OSC.\n\nPlease visit https://pi-plates.com/daqc2r1/\n\nChataigne Module specific documentation can be found in the README on GitHub:",
+	"url": "https://github.com/madees/DAQC2-Chataigne-Module",
+	"downloadURL": "https://github.com/madees/DAQC2-Chataigne-Module/archive/master.zip",
+	
+	"hasInput": true,
+	"hasOutput": true, 
+	"hideDefaultCommands": false,
+	"hideDefaultParameters": [
+		"autoRange",
+		"autoFeedback",
+		"input",
+		"outputs",
+		"useHierarchy"
+	],
+	
+	"defaults": {
+		"autoAdd": false,
+		"oscInput": {
+			"localPort": 50051
+		},
+		"OSC Outputs": {
+			"OSC Output": {
+				"local": true,
+				"remoteHost": "127.0.0.1",
+				"remotePort": 50052
+			}
+		}
+	},
+	"scripts": [
+		"DAQC2-osc.js"
+	],
+	
+	"values": {
+		"Click to ping DAQC2":
+			{
+				"type":"Trigger",
+				"description":"Check if DAQC2 is up and running.\n"
+			},
+		"Is there anybody out there":
+			{
+				"type":"Boolean",
+				"description":"DAQC2 is up and running.\n"
+			},
+		"CANs":
+		{
+			"type":"Container",
+			"CAN 0":
+			{
+				"type":"Float",
+				"min":-12,
+				"max":12
+			},
+			"CAN 1":
+			{
+				"type":"Float",
+				"min":-12,
+				"max":12
+			},
+			"CAN 2":
+			{
+				"type":"Float",
+				"min":-12,
+				"max":12
+			},
+			"CAN 3":
+			{
+				"type":"Float",
+				"min":-12,
+				"max":12
+			},
+			"CAN 4":
+			{
+				"type":"Float",
+				"min":-12,
+				"max":12
+			},
+			"CAN 5":
+			{
+				"type":"Float",
+				"min":-12,
+				"max":12
+			},
+			"CAN 6":
+			{
+				"type":"Float",
+				"min":-12,
+				"max":12
+			},
+			"CAN 7":
+			{
+				"type":"Float",
+				"min":-12,
+				"max":12
+			}
+		},
+		"DINs":
+		{
+			"type":"Container",
+			"DIN 0":
+			{
+				"type":"Boolean"
+			},
+			"DIN 1":
+			{
+				"type":"Boolean"
+			},
+			"DIN 2":
+			{
+				"type":"Boolean"
+			},
+			"DIN 3":
+			{
+				"type":"Boolean"
+			},
+			"DIN 4":
+			{
+				"type":"Boolean"
+			},
+			"DIN 5":
+			{
+				"type":"Boolean"
+			},
+			"DIN 6":
+			{
+				"type":"Boolean"
+			},
+			"DIN 7":
+			{
+				"type":"Boolean"
+			}
+			
+		}
+	},
+			
+	"commands": 
+	{
+		"ping":
+		{
+			"menu":"",
+			"callback":"txPing",
+			"description":"Send a ping. Should receive pong.\n",
+			"parameters":
+			{
+			}
+		},
+		
+		"getDIN":
+		{
+			"menu":"",
+			"callback":"getDIN",
+			"description":"get all DIN states.\n",
+			"parameters":
+			{
+			}
+		},
+		
+		"intEnable":
+		{
+			"menu":"",
+			"callback":"intEnable",
+			"description":"Enable interrupts on DIN.\n",
+			"parameters":
+			{
+			}
+		},
+		
+		"intDisable":
+		{
+			"menu":"",
+			"callback":"intDisable",
+			"description":"Disable interrupt on DIN.\n",
+			"parameters":
+			{
+			}
+		},
+
+		"DOut":
+		{
+			"menu":"",
+			"callback":"txDOut",
+			"description":"Set Digital Out state.\n",
+			"parameters":
+			{
+				"Channel":
+				{
+					"type":"Integer",
+					"min":0,
+					"max":7
+				},
+				"State":
+				{
+					"type":"Boolean"
+				}
+			}
+		},
+
+		"Color LED":
+		{
+			"menu":"",
+			"callback":"txLED",
+			"description":"Set RGB LED color as string (off, red, green, yellow, blue, magenta, cyan, white).\n",
+			"parameters":
+			{
+				"Color":
+				{
+					"type":"String"
+				}
+			}
+		}
+	}
+}
