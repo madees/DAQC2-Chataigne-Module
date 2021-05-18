@@ -41,7 +41,7 @@ You should first start the OSC parser on Raspberry Pi by running the script:
 
 By default, it will send OSC to local IP (ie. Chataigne shoud run on Raspberry Pi).
 
-You can also send OSC to another IP (if Chataigne runs on another distant device) by giving IP as command line argument, example :
+Alternatively, you can also send OSC to another IP (if Chataigne runs on another distant device than the DAQC2 equipped RPI) by giving IP as command line argument, example :
 > python3 OSCDAQC2Plate.py 192.168.1.69
 
 The DAQC2 LED should turn from white to black, and to green if everything's fine.
@@ -52,12 +52,12 @@ You may use Module Commands to change DAQC2 outputs, and Module Values to retrie
 
 ## Module interface
 #### OSC Input port
-Preset according to Python script (5051). If not local, Python script should be run with Chataigne IP as argument
+Preset according to Python script setting (50051).
 
 #### OSC Output port
-Preset according to Python script (50052).
+Preset according to Python script setting (50052).
 
-Default IP address setting is local, if you run Chataigne on the Raspberry PI. If not, should be set to the distant Raspberry Pi IP.
+Default IP address setting is local, if you run Chataigne on the same Raspberry PI as DAQC2. If not, it should be set accordingly to the distant Raspberry Pi IP.
 
 #### Ping
 Simple function to check communication with Python script.
