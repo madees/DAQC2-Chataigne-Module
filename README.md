@@ -68,7 +68,7 @@ Pressing the button will send a "/ping" command.
 
 #### CAN Analog inputs
 - Eight protected inputs
-- -12 to +12V input range
+- -12 to +12 V input range
 - 16 bit resolution
 
 Receives "/CAN/channel value" as float
@@ -79,8 +79,8 @@ Sampling rate from DAQC2 is about 1000 samples/second, but filtered to max 50 va
 
 #### DIN Digital inputs
 - 8 protected inputs
-- 3.3 and 5.0 logic compatible
-- Can be polled or programmed to generate an interrupt on change
+- 3.3 V and 5.0 V logic compatible
+- Can be polled, or programmed to generate an interrupt on change
 
 Receives "/DIN/channel state" as boolean
 
@@ -88,22 +88,22 @@ Receives "/DIN/channel state" as boolean
 Commands are ready to use in your scripts, with the "Command tester" tool, or as outputs from the State machine and Sequences in Time Machine.
 
 #### Ping
-Send "/ping", should receive "/pong". This is time stamped in RPI CLI.
+Send "/ping", should receive "/pong". For debug, this is time stamp logged in RPI CLI.
 
 #### GetDIN
 Send "/getDIN"
 
-Update DIN states manually.
+Update DIN states manually, for polling method.
 
 #### intEnable
 Send "/intEnable"
 
-Enable interrupts on digital inputs. States will be automatically updates when the inputs changes. This is time stamped in RPI CLI.
+Enable interrupts on digital inputs. States will be automatically updated when the inputs changes. For debug, this is time stamp logged in RPI CLI.
 
 #### intDisable
 Send "/intDisable"
 
-Disable interrupts on digital inputs. You'll need to manually pull changes by using GetDIN. This is time stamped in RPI CLI.
+Disable interrupts on digital inputs. You'll need to manually poll for changes by using GetDIN. For debug, this is time stamp logged in RPI CLI.
 
 #### DOut (channel, state)
 Send "/Dout/channel state"
